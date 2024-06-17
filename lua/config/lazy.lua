@@ -36,7 +36,11 @@ require("lazy").setup({
         "tohtml",
         "tutor",
         "zipPlugin",
+        "dashboard",
       },
     },
+  },
+  ui = {
+    border = "rounded",
   },
 })
