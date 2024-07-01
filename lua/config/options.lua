@@ -4,3 +4,9 @@
 
 vim.opt.clipboard = ""
 vim.opt.colorcolumn = "120"
+
+vim.diagnostic.config({
+  float = { border = "rounded" },
+})
+
+vim.g.lazyvim_prettier_needs_config = false
