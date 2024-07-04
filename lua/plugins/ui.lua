@@ -18,12 +18,12 @@ return {
     end,
   },
 
-  -- {
-  --   "b0o/incline.nvim",
-  --   config = function()
-  --     require("incline").setup()
-  --   end,
-  --   -- Optional: Lazy load Incline
-  --   event = "VeryLazy",
-  -- },
+  {
+    "folke/zen-mode.nvim",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  }
 }

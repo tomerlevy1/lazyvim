@@ -15,9 +15,12 @@ set("n", "<C-d>", "<C-d>zz")
 set("n", "<C-u>", "<C-u>zz")
 set("n", "G", "Gzz")
 
--- set("n", "<leader>rn", function()
---   return ":IncRename " .. vim.fn.expand("<cword>")
--- end, { expr = true, silent = true, desc = "Rename" })
+set("n", "<leader>z", function()
+  require("zen-mode").toggle({ window = { width = .50 } })
+end, { desc = "ZenMode" })
+
+set("n", "<leader>ct", ":CopilotToggle<CR>", { desc = "Toggle Copilot", silent = true })
+set('i', '<C-s>', 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = false })
 
 -- local del = vim.keymap.del
 --- Delete keymaps
