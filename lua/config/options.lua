@@ -6,6 +6,7 @@ vim.opt.clipboard   = ""
 vim.opt.colorcolumn = "120"
 vim.opt.updatetime  = 50
 vim.opt.hlsearch    = false
+vim.opt.foldenable  = false
 
 vim.diagnostic.config({
   float = { border = "rounded" },

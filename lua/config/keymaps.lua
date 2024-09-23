@@ -18,9 +18,12 @@ set("n", "G", "Gzz")
 set("n", "<leader>z", function()
   require("zen-mode").toggle({ window = { width = .50 } })
 end, { desc = "ZenMode" })
+set("n", "<leader>Z", function()
+  require("zen-mode").toggle({ window = { width = .75 } })
+end, { desc = "ZenMode" })
 
 set("n", "<leader>ct", ":CopilotToggle<CR>", { desc = "Toggle Copilot", silent = true })
-set('i', '<C-s>', 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = false })
+set("i", "<C-s>", "copilot#Accept('\\<CR>')", { expr = true, replace_keycodes = false })
 
 -- local del = vim.keymap.del
 --- Delete keymaps
