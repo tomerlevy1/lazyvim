@@ -1,58 +1,17 @@
 return {
   {
     "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "shellcheck",
-        "stylua",
-        "shfmt",
-        "eslint_d",
-        "prettierd",
-      },
-      ui = {
-        border = "rounded",
-      },
-    },
-  },
+    opts = function(_, opts)
+      opts_ui = {
+        ui = {
+          border = "rounded"
+        }
+      }
 
-  -- add tsserver and setup with typescript.nvim instead of lspconfig
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      "jose-elias-alvarez/typescript.nvim",
-      init = function()
-        require("lspconfig.ui.windows").default_options.border = "rounded"
-        require("lazyvim.util").lsp.on_attach(function(_, buffer)
-          -- stylua: ignore
-          vim.keymap.set( "n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
-          vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
-        end)
-      end,
-    },
-    ---@class PluginLspOpts
-    opts = {
-      ---@type lspconfig.options
-      servers = {
-        -- tsserver will be automatically installed with mason and loaded with lspconfig
-        tsserver = {},
-      },
-      -- you can do any additional lsp server setup here
-      -- return true if you don't want this server to be setup with lspconfig
-      ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
-      setup = {
-        -- example to setup with typescript.nvim
-        tsserver = function(_, opts)
-          require("typescript").setup({ server = opts })
-          return true
-        end,
-        -- Specify * to use this function as a fallback for any server
-        -- ["*"] = function(server, opts) end,
-      },
-    },
-  },
+      new_opts = vim.tbl_extend("force", opts, opts_ui)
 
-  {
-    "smjonas/inc-rename.nvim",
-    opts = {},
-  },
+      -- vim.print(vim.inspect(new_opts))
+      return new_opts
+    end,
+  }
 }

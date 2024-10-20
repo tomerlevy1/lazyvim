@@ -1,31 +1,19 @@
 return {
-  -- {
-  --   "nvim-cmp",
-  --   opts = function(_, opts)
-  --     local luasnip = require("luasnip")
-  --     local cmp = require("cmp")
-  --
-  --     opts.mapping["<Tab>"] = cmp.mapping(function(fallback)
-  --       local copilot_available, copilot_suggestion = pcall(require, "copilot.suggestion")
-  --       print(copilot_suggestion.is_visible())
-  --
-  --       if copilot_available and copilot_suggestion.is_visible() then
-  --         copilot_suggestion.accept()
-  --         -- If it's not, accept the luasnip expansion if it's available
-  --       elseif luasnip.expand_or_locally_jumpable() then
-  --         luasnip.expand_or_jump()
-  --       else
-  --         fallback()
-  --       end
-  --     end, { "i", "s" })
-  --
-  --     --   opts.mapping["<S-Tab>"] = cmp.mapping(function(fallback)
-  --     --     if luasnip.locally_jumpable(-1) then
-  --     --       luasnip.jump(-1)
-  --     --     else
-  --     --       fallback()
-  --     --     end
-  --     --   end, { "i", "s" })
-  --   end,
-  -- }
+  {
+    "nvim-cmp",
+    opts = function(_, opts)
+      local cmp = require("cmp")
+      opts_win = {
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        }
+      }
+
+      new_opts = vim.tbl_extend("force", opts, opts_win)
+
+      -- vim.print(vim.inspect(new_opts))
+      return new_opts
+    end,
+  }
 }
