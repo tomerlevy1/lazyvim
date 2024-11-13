@@ -1,6 +1,5 @@
 local set = vim.keymap.set
 local util = require("util")
-
 util.cowboy()
 
 set("n", "<leader>t", "<CMD>w<CR>", { desc = "Save buffer" })
@@ -24,15 +23,16 @@ set("n", "<C-d>", "10jzz")
 set("n", "<C-u>", "10kzz")
 set("n", "G", "Gzz")
 
-set("n", "<leader>z", function()
+set("n", "<leader>Z", function()
   require("zen-mode").toggle({ window = { width = .50 } })
 end, { desc = "ZenMode" })
-set("n", "<leader>Z", function()
+set("n", "<leader>z", function()
   require("zen-mode").toggle({ window = { width = .75 } })
 end, { desc = "ZenMode" })
 
 set("n", "<leader>ct", ":CopilotToggle<CR>", { desc = "Toggle Copilot", silent = true })
-set("i", "<C-s>", "copilot#Accept('\\<CR>')", { expr = true, replace_keycodes = false })
+
+-- util.cowboy()
 
 -- local del = vim.keymap.del
 --- Delete keymaps
