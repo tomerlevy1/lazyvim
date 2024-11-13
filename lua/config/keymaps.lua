@@ -1,6 +1,6 @@
 local set = vim.keymap.set
-local util = require("util")
-util.cowboy()
+-- local util = require("util")
+-- util.cowboy()
 
 set("n", "<leader>t", "<CMD>w<CR>", { desc = "Save buffer" })
 set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
