@@ -16,7 +16,6 @@ return {
         end,
         desc = "Explorer NeoTree (cwd)",
       },
-      -- { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (Root Dir)", remap = true },
       { "<leader>e", false },
       { "<leader>E", false },
       {

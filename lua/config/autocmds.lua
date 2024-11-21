@@ -21,3 +21,13 @@ vim.api.nvim_create_user_command("CopilotToggle", function()
   end
   copilot_on = not copilot_on
 end, { nargs = 0 })
+
+local diffview_on = false
+vim.api.nvim_create_user_command("DiffviewToggle", function()
+  if diffview_on then
+    vim.cmd("DiffviewClose")
+  else
+    vim.cmd("DiffviewOpen")
+  end
+  diffview_on = not diffview_on
+end, { nargs = 0 })
