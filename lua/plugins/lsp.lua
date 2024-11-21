@@ -2,21 +2,9 @@ return {
   {
     "neovim/nvim-lspconfig",
     init = function()
-      local with = vim.lsp.with
-      local handlers = vim.lsp.handlers
-
-      handlers["textDocument/hover"] = with(handlers.hover, {
-        silent = true,
-        border = "single",
-      })
-
-      handlers["textDocument/signatureHelp"] = with(handlers.hover, {
-        border = "single",
-      })
-
-      -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single", silent = true })
-      -- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help,
-      --   { border = "single" })
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
+      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help,
+        { border = "single" })
     end,
     opts = {
       inlay_hints = {
@@ -48,6 +36,6 @@ return {
 
   {
     "williamboman/mason.nvim",
-    opts = { ensure_installed = { "stylelint" } },
+    opts = { ensure_installed = { "stylelint", "eslint_d" } },
   }
 }

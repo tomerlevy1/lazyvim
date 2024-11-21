@@ -5,14 +5,14 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
     init = function()
-      vim.g.vimwiki_map_prefix = '<leader>e'
+      vim.g.vimwiki_map_prefix = "<leader>e"
       vim.g.vimwiki_list = {
         {
           -- path = "~/vimwiki/",
           -- syntax = "markdown",
           -- ext = "md",
-          auto_tags = 1
-        }
+          auto_tags = 1,
+        },
       }
     end,
     config = function()
@@ -24,8 +24,8 @@ return {
         vim.cmd("Trouble loclist toggle")
       end, { silent = true, desc = "Search tags in wiki" })
       -- vim.keymap.set("n", "<Leader>ee", "[[:VimwikiSearchTags<Space> input(\"tag name\")]]", { silent = true, desc = "Search tags in wiki" })
-      vim.keymap.set("n", "<Leader>e<Space>d", ":r!date \"+\\%F\"<CR>", { silent = true, desc = "Insert date" })
-    end
+      vim.keymap.set("n", "<Leader>e<Space>d", ':r!date "+\\%F"<CR>', { silent = true, desc = "Insert date" })
+    end,
   },
 
   {
@@ -34,5 +34,5 @@ return {
     config = function()
       require("telescope").load_extension("vimwiki")
     end,
-  }
+  },
 }

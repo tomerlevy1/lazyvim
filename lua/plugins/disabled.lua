@@ -1,7 +1,5 @@
 local plugins = {
   "akinsho/bufferline.nvim",
-  -- "nvim-neo-tree/neo-tree.nvim",
-  "nvimdev/dashboard-nvim",
 }
 
 local result = {}

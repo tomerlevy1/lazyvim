@@ -18,7 +18,7 @@ return {
       },
       -- { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (Root Dir)", remap = true },
       { "<leader>e", false },
-      { "<leader>E", "<leader>fe", desc = "Explorer NeoTree (cwd)", remap = true },
+      { "<leader>E", false },
       {
         "<leader>ge",
         function()
@@ -34,5 +34,5 @@ return {
         desc = "Buffer Explorer",
       },
     },
-  }
+  },
 }
