@@ -3,19 +3,19 @@ return {
     "neovim/nvim-lspconfig",
     init = function()
       vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
-      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help,
-        { border = "single" })
+      vim.lsp.handlers["textDocument/signatureHelp"] =
+        vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" })
     end,
     opts = {
       inlay_hints = {
-        enabled = true,
+        enabled = false,
       },
       servers = {
         html = {},
         emmet_ls = {},
         cssls = {},
       },
-    }
+    },
   },
 
   {
@@ -23,8 +23,8 @@ return {
     opts = function(_, opts)
       local opts_ui = {
         ui = {
-          border = "rounded"
-        }
+          border = "rounded",
+        },
       }
 
       local new_opts = vim.tbl_extend("force", opts, opts_ui)
@@ -37,5 +37,5 @@ return {
   {
     "williamboman/mason.nvim",
     opts = { ensure_installed = { "stylelint", "eslint_d" } },
-  }
+  },
 }
