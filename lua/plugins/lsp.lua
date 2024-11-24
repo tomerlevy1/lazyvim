@@ -21,21 +21,16 @@ return {
   {
     "williamboman/mason.nvim",
     opts = function(_, opts)
-      local opts_ui = {
-        ui = {
-          border = "rounded",
-        },
+      opts.ui = {
+        border = "rounded",
       }
 
-      local new_opts = vim.tbl_extend("force", opts, opts_ui)
-
-      -- vim.print(vim.inspect(new_opts))
-      return new_opts
+      return opts
     end,
   },
 
   {
     "williamboman/mason.nvim",
-    opts = { ensure_installed = { "stylelint", "eslint_d" } },
+    -- opts = { ensure_installed = { "stylelint" } },
   },
 }
