@@ -6,7 +6,8 @@ set("n", "<leader>t", "<CMD>w<CR>", { desc = "Save buffer" })
 set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
 set("n", "<leader>bc", "<CMD>CopyBufferName<CR>", { silent = true, desc = "Yank buffer name" })
 set("n", "<leader>bC", "<CMD>CopyBufferPath<CR>", { silent = true, desc = "Yank buffer path" })
-set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace text" })
+set("n", "<localleader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace text" })
+set("n", "<localleader>m", "<CMD>Maven<CR>", { desc = "Maven" })
 
 -- Resize window using <ctrl> arrow keys
 set("n", "<C-Up>", "<cmd>resize +5<cr>", { desc = "Increase window height" })
@@ -24,10 +25,10 @@ set("n", "<C-u>", "10kzz")
 set("n", "G", "Gzz")
 
 set("n", "<leader>Z", function()
-  require("zen-mode").toggle({ window = { width = .50 } })
+  require("zen-mode").toggle({ window = { width = 0.50 } })
 end, { desc = "ZenMode" })
 set("n", "<leader>z", function()
-  require("zen-mode").toggle({ window = { width = .75 } })
+  require("zen-mode").toggle({ window = { width = 0.75 } })
 end, { desc = "ZenMode" })
 
 set("n", "<leader>ct", ":CopilotToggle<CR>", { desc = "Toggle Copilot", silent = true })
